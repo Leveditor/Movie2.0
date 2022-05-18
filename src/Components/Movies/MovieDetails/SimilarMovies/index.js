@@ -7,17 +7,17 @@ import { useParams } from "react-router-dom";
 
 export default function Similar() {
   const [open, setOpen] = useState(false);
-  const [similarMovies, setSimiliar] = useState([]);
+  const [similarMovies, setSimiliarMovies] = useState([]);
   const { id } = useParams();
   const cancelButtonRef = useRef(null);
 
   useEffect(() => {
     async function loadFilme() {
-      const similarTitle = await api.get(
+      const similiarMovies = await api.get(
         `/3/movie/${id}/similar?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`
       );
 
-      setSimiliar(similarTitle.data);
+      setSimiliarMovies(similiarMovies.data);
     }
 
     loadFilme();
@@ -60,13 +60,20 @@ export default function Similar() {
                                 <div className="w-36 pl-5 pt-5" key={movie.id}>
                                   <Link to={`/details/${movie.id}`} onClick={() => setOpen(false)}>
                                     <div>
-                                      <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                                        className="rounded-lg" alt={movie.title}/>
-                                    </div>
+                                      <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg" alt={movie.title}/>
+                                      <div className="flex">
+                                          <div className="pr-7">
+                                            <small>{movie.release_date}</small>
+                                          </div>
+                                          <div>
+                                            <p className={ movie.vote_average.toString().replace(".", "").substr(0, 2) > 70 ? "text-green-400" : "text-yellow-500" }>
+                                                { movie.vote_average.toString().replace(".", "").substr(0, 2) }%</p>
+                                            </div>
+                                          </div>
+                                      </div>
                                   </Link>
                                 </div>
-                              ))
-                            : []}
+                              )): []}
                         </div>
                       </div>
                     </div>
