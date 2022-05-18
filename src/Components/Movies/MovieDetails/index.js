@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import api from "../../../services/api";
 import People from "./People";
-import Similar from "./Similiar";
+import Similar from "./SimilarMovies";
 import Trailer from "./Trailer";
 
 export default function Details() {
