@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import api from "../../../services/api";
 import People from "./People";
 import Similar from "./SimilarMovies";
-import Trailer from "./Trailer";
+import Trailer from "./TrailerMovie";
 
 export default function Details() {
   const { id } = useParams();
