@@ -7,16 +7,16 @@ import Trailer from "./TrailerMovie";
 
 export default function MovieDetails() {
   const { id } = useParams();
-  const [movie, setMovie] = useState({});
+  const [movie, setSerie] = useState({});
 
   useEffect(() => {
-    async function loadFilme() {
-      const response = await api.get( `/3/movie/${id}?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
+    async function loadSerie () {
+      const serie = await api.get( `/3/movie/${id}?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
 
-      setMovie(response.data);
+      setSerie(serie.data);
     }
 
-    loadFilme();
+    loadSerie();
   }, [id]);
 
   const styleTrailer = {
@@ -53,7 +53,6 @@ export default function MovieDetails() {
           <People />
           <Similar />
         </div>
-        
       </div>
      
     </>
