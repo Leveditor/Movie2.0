@@ -10,7 +10,7 @@ This project consists of consuming an API and displaying the movie catalog
 
 Photo
 
-![Foto do projeto](FotoProjeto.PNG)
+![Foto do projeto](projectPhoto.PNG)
 
 Final result: https://dulcet-sprite-89eea8.netlify.app/
 
@@ -33,7 +33,7 @@ In order for this project to run on your machine, follow the steps below:
 Clone this repository into a folder on your machine  
 $ git clone https://github.com/Leveditor/Movie2.0.git  
 
-Enter the folder 
+Enter the folder
 $ cd Movie2.0  
 
 Install the dependencies by typing in the terminal:  
