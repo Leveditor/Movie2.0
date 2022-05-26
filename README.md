@@ -10,7 +10,7 @@ This project consists of consuming an API and displaying the movie catalog
 
 Photo
 
-![Foto do projeto](projectPhoto.PNG)
+![Foto do projeto](projectPhoto.png)
 
 Final result: https://dulcet-sprite-89eea8.netlify.app/
 
