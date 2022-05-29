@@ -54,7 +54,7 @@ export default function People() {
                     </div>
                     <div className="sm:flex sm:items-start">
                       <div className="mt-3 text-center sm:mt-0 sm:text-left">
-                        <div className="grid grid-cols-4">
+                        <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2">
                           {people.cast ? people.cast.map((people) => (
                                 <div className="w-36 pl-5 pt-5">
                                   <img src={`https://image.tmdb.org/t/p/original/${people.profile_path}`}

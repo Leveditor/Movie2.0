@@ -1,8 +1,7 @@
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
-      <div
-        className={className}
+      <div className={className}
         style={{
           ...style,
           display: "block",
@@ -44,7 +43,6 @@ function SampleNextArrow(props) {
         settings: {
           slidesToShow: 7,
           slidesToScroll: 7,
-          infinite: false,
           dots: false,
         },
       },
@@ -57,11 +55,10 @@ function SampleNextArrow(props) {
         },
       },
       {
-        breakpoint: 400,
+        breakpoint: 320,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          infinite: false,
           dots: false,
         },
       },

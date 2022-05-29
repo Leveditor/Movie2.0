@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Dialog, Transition } from "@headlessui/react";
@@ -53,7 +52,7 @@ export default function SimilarSerie() {
                     </div>
                     <div className="sm:flex sm:items-start">
                       <div className="mt-3 text-center sm:mt-0 sm:text-left">
-                        <div className="grid grid-cols-4">
+                        <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2">
                           {similarSerie.results ? similarSerie.results.map((serie) => (
                                 <div className="w-36 pl-5 pt-5" key={serie.id}>
                                 <Link to={`/details/${serie.id}`} onClick={() => setOpen(false)}>

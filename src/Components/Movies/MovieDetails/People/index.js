@@ -12,11 +12,9 @@ export default function People() {
 
   useEffect(() => {
     async function loadFilme() {
-      const response2 = await api.get(
-        `/3/movie/${id}/credits?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`
-      );
+      const peopleMovie = await api.get(`/3/movie/${id}/credits?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
 
-      setPeople(response2.data);
+      setPeople(peopleMovie.data);
     }
 
     loadFilme();
