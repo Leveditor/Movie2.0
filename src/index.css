@@ -7,6 +7,32 @@
   max-width: 250px;
 }
 
+.trailer {
+  height: 100vh;
+}
+
+@media (max-width: 576px) {
+
+  .trailer {
+      height: 60vh;
+      display: none;
+  }
+}
+
+@media (min-width: 768px ) {
+
+  .trailer {
+      height: 60vh;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .trailer {
+      height: 100vh;
+  }
+}
+
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;

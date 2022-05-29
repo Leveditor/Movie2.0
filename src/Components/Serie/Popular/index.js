@@ -22,10 +22,10 @@ export default function Serie() {
 
   return (
     <>
-      <div className=" mt-8 p-8 pt-0">
+      <div className="mt-8 p-8 pt-0">
         <div className="flex justify-between">
           <div>
-            <h1 className="text-2xl text-white pb-1 pl-1">popular series</h1>
+            <h1 className="text-2xl text-white pb-1 pl-1">Popular series</h1>
           </div>
           <div>
             <a href="#">
@@ -39,17 +39,13 @@ export default function Serie() {
               <div className="p-1" key={movie.id}>
                 <Link to={`details-series/${movie.id}`}>
                   <div>
-                    <img
-                      src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                      className="rounded-lg"
-                      alt={movie.title} />
+                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                      className="rounded-lg" alt={movie.title} />
                   </div>
                 </Link>
                 <div className="flex justify-between">
                   <div>
-                    <small className="pl-1 text-gray-400">
-                      {movie.first_air_date}
-                    </small>
+                    <small className="pl-1 text-gray-400">{movie.first_air_date}</small>
                   </div>
                   <div>
                     <p className={movie.vote_average.toString().replace(".", "") > 70 ? 'text-green-400' : 'text-yellow-500'}>

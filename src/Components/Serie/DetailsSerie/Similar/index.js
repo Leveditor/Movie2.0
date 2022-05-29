@@ -55,14 +55,22 @@ export default function SimilarSerie() {
                       <div className="mt-3 text-center sm:mt-0 sm:text-left">
                         <div className="grid grid-cols-4">
                           {similarSerie.results ? similarSerie.results.map((serie) => (
-                                <div className="w-36 pl-5 pt-5">
-                                  <Link to={`/details-series/${serie.id}`} onClick={() => setOpen(false)}>
-                                    <div>
-                                      <img src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`}
-                                        className="rounded-lg" alt={serie.title} />
+                                <div className="w-36 pl-5 pt-5" key={serie.id}>
+                                <Link to={`/details/${serie.id}`} onClick={() => setOpen(false)}>
+                                  <div>
+                                    <img src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`} className="rounded-lg" alt={serie.title}/>
+                                    <div className="flex">
+                                        <div className="pr-7">
+                                          <small>{serie.first_air_date}</small>
+                                        </div>
+                                        <div>
+                                          <p className={ serie.vote_average.toString().replace(".", "").substr(0, 2) > 70 ? "text-green-400" : "text-yellow-500" }>
+                                              { serie.vote_average.toString().replace(".", "").substr(0, 2) }%</p>
+                                          </div>
+                                        </div>
                                     </div>
-                                  </Link>
-                                </div>
+                                </Link>
+                              </div>
                               )) : []}
                         </div>
                       </div>

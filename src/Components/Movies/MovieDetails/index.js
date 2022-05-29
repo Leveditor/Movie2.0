@@ -11,7 +11,7 @@ export default function MovieDetails() {
 
   useEffect(() => {
     async function loadSerie () {
-      const serie = await api.get( `/3/movie/${id}?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
+      const serie = await api.get(`/3/movie/${id}?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
 
       setSerie(serie.data);
     }

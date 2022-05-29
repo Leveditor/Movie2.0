@@ -7,51 +7,45 @@ import Trailer from "./TrailerSeries";
 
 export default function Details() {
   const { id } = useParams();
-  const [movie, setMovie] = useState({});
+  const [serie, setDetailsSerie] = useState({});
 
   useEffect(() => {
     async function loadFilme() {
-      const response = await api.get(
-        `/3/tv/${id}?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`
-      );
+      const serieDetails = await api.get(`/3/tv/${id}?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
 
-      setMovie(response.data);
+      setDetailsSerie(serieDetails.data);
     }
 
     loadFilme();
   }, [id]);
 
   const styleTrailer = {
-    backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
-    height: "100vh",
+    backgroundImage: `url(https://image.tmdb.org/t/p/original/${serie.backdrop_path})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
   };
 
   return (
     <>
-      <div style={styleTrailer}>
+      <div style={styleTrailer} className='trailer'>
           <Trailer />
       </div>
 
-      <div className="sm:grid grid-flow-col sm:ml-12 mt-10 ml-2">
+      <div className="sm:grid grid-flow-col  sm:ml-12 mt-10 ml-2">
         <div>
-          <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-            className="rounded-lg imgCard" alt={movie.title}/>
+          <img src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`}
+            className="rounded-lg imgCard pl-10 sm:pl-0" alt={serie.title}/>
         </div>
         <div>
-          <h1 className="text-white sm:pl-5 pl-2 pt-8 text-4xl">
-            {movie.original_name}
-          </h1>
+          <h1 className="text-white sm:pl-5 pl-2 pt-8 text-4xl">{serie.original_name}</h1>
           <div className="sm:pl-5 pl-2 pt-1">
-            {movie.genres ? movie.genres.map((genre) => (
+            {serie.genres ? serie.genres.map((genre) => (
                   <span className="text-white text-md" key={genre.id}> • {genre.name}</span>
-                ))
-              : []}
+                )) : []}
           </div>
-          <p className="text-gray-400 sm:pl-5 pl-2 pt-1">{movie.first_air_date}</p>
-          <p className="text-white sm:pl-5 pl-2 pt-4">{movie.tagline}</p>
-          <p className="text-white sm:pl-5 pl-2 pr-3 pt-4 text-justify">{movie.overview}</p>
+          <p className="text-gray-400 sm:pl-5 pl-2 pt-1">{serie.first_air_date}</p>
+          <p className="text-white sm:pl-5 pl-2 pt-4">{serie.tagline}</p>
+          <p className="text-white sm:pl-5 pl-2 pr-3 pt-4 text-justify">{serie.overview}</p>
           <People />
           <Similar />
         </div>

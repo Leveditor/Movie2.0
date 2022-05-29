@@ -9,8 +9,7 @@ function SampleNextArrow(props) {
           background: "black",
           
         }}
-        onClick={onClick}
-      />
+        onClick={onClick}/>
     );
   }
  
@@ -32,7 +31,7 @@ function SampleNextArrow(props) {
  
   let settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 7,
     slidesToScroll: 7,
@@ -68,6 +67,5 @@ function SampleNextArrow(props) {
       },
     ],
   };
-
 
 export default settings;
