@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import api from "../../../services/api";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import api from '../../../../services/api';
 
-export default function MovieTop() {
+export default function UpcomingPage() {
   const [allmovies, SetAllMovies] = useState([]);
-  const [pagina, setPagina] = useState(1);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function list() {
-      const allMovie = await api.get(`/3/movie/popular?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=${pagina}`,
+      const allMovie = await api.get(`/3/movie/upcoming?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=${page}`,
         {}
       );
 
@@ -16,21 +16,21 @@ export default function MovieTop() {
     }
 
     list();
-  }, [pagina]);
+  }, [page]);
 
   function handleNext() {
-    setPagina(pagina + 1);
+    setPage(page + 1);
   }
 
   function handleBack() {
-    setPagina(pagina - 1);
+    setPage(page - 1);
   }
 
   return (
     <>
       <div className="mt-12 p-8">
         <div>
-          <h1 className="text-2xl text-white pb-1 pl-1">Most Popular</h1>
+          <h1 className="text-2xl text-white pb-1 pl-1">Upcoming Premieres</h1>
         </div>
       <div className="grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2">
         {allmovies.map((movie) => {
@@ -72,8 +72,6 @@ export default function MovieTop() {
             </button>
           </div>
       </div>
-
-      
     </>
   );
 }

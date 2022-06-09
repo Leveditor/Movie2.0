@@ -35,9 +35,9 @@ export default function Upcoming() {
             <h1 className="text-white text-2xl pb-1 pl-1">Upcoming Premieres</h1>
           </div>
           <div>
-            <a href="#">
+            <Link to='upComing'>
               <small className="pr-2 text-white">See more</small>
-            </a>
+            </Link>
           </div>
         </div>
         <Slider {...settings}>
