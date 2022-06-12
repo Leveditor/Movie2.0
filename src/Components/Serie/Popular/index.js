@@ -28,9 +28,9 @@ export default function Serie() {
             <h1 className="text-2xl text-white pb-1 pl-1">Popular series</h1>
           </div>
           <div>
-            <a href="#">
+            <Link to='popularSerie'>
               <small className="pr-2 text-white">See more</small>
-            </a>
+            </Link>
           </div>
         </div>
         <Slider {...settings}>
