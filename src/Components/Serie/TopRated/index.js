@@ -37,9 +37,9 @@ export default function TopRatedSerie() {
             </h1>
           </div>
           <div>
-            <a href="#">
+            <Link to="topRetedSerie">
               <small className="pr-2 text-white">See more</small>
-            </a>
+            </Link>
           </div>
         </div>
         <Slider {...settings}>

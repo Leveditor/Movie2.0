@@ -8,6 +8,7 @@ import MovieTop from './Components/Movies/AllMoviesPages/MoviePage';
 import TopRated from './Components/Movies/AllMoviesPages/TopRatedPage';
 import Upcoming from './Components/Movies/AllMoviesPages/UpcomingPage';
 import PopularSerie from './Components/Serie/AllSeriePages/PopularSeriePage';
+import TopRetedSerie from './Components/Serie/AllSeriePages/TopRatedPages';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/upComing" element={<Upcoming />} />
 
             <Route path="/popularSerie" element={<PopularSerie />} />
+            <Route path="/topRetedSerie" element={<TopRetedSerie />} />
         </Routes>
       </BrowserRouter>
     </>
