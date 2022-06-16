@@ -1,13 +1,8 @@
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { Link } from "react-router-dom";
-
-const navigation = [
-  { name: 'Home', href: '/', current: false },
-  { name: 'Movies', href: '#', current: false },
-  { name: 'Series', href: '#', current: false },
-  { name: 'People', href: '#', current: false },
-];
+import { Link } from 'react-router-dom';
+import MenuMovie from './MenuMovie';
+import MenuSerie from './MenuSerie';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -34,13 +29,13 @@ export default function Header() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <Link key={item.name} to={item.href}
-                        className={classNames(item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-lg font-medium')} aria-current={item.current ? 'page' : undefined} >
-                        {item.name}
+                      <Link to='/' className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white',
+                          'px-3 py-2 rounded-md text-lg font-medium')}>
+                          Home
                       </Link>
-                    ))}
+                      
+                      <MenuMovie />
+                      <MenuSerie />
                   </div>
                 </div>
               </div>
@@ -49,14 +44,10 @@ export default function Header() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
-                <Disclosure.Button key={item.name} as="a" href={item.href}
-                  className={classNames(item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
-                  )} aria-current={item.current ? 'page' : undefined}>
-                  {item.name}
-                </Disclosure.Button>
-              ))}
+            <Link to='/' className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white',
+                   'px-3 py-2 rounded-md text-lg font-medium')}>Home</Link>
+              <MenuMovie />
+              <MenuSerie />
             </div>
           </Disclosure.Panel>
         </>
