@@ -24,12 +24,12 @@ export default function Top() {
     <>
       <div className="mt-12 p-8">
         <div className="flex justify-between">
-          <div>
-            <h1 className="text-2xl text-white pb-1 pl-1">Most Popular</h1>
+          <div className="pl-2 pb-2">
+            <h3 className="text-2xl text-white pb-1 pl-1 border-l-4 border-sky-700">Most Popular</h3>
           </div>
           <div>
             <Link to='tops'>
-              <small className="pr-2 text-white">See more</small>
+              <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
             </Link>
           </div>
         </div>

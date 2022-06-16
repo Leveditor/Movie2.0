@@ -31,12 +31,12 @@ export default function TopRated() {
     <>
       <div className="mt-2 p-8">
         <div className="flex justify-between">
-          <div>
-            <h1 className="text-white text-2xl pb-1 pl-1">The most voted</h1>
+          <div className="pl-2 pb-2">
+            <h1 className="text-white text-2xl pb-1 pl-1 border-l-4 border-sky-700">The most voted</h1>
           </div>
           <div>
             <Link to='topRated'>
-              <small className="pr-2 text-white">See more</small>
+              <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
             </Link>
           </div>
         </div>

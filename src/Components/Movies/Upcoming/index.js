@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import api from "../../../services/api";
-import Slider from "react-slick";
-import settings from "../../Button";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import api from '../../../services/api';
+import Slider from 'react-slick';
+import settings from '../../Button';
 
 export default function Upcoming() {
   const [firstPage, SetFirstPage] = useState([]);
@@ -11,12 +11,12 @@ export default function Upcoming() {
   useEffect(() => {
     async function list() {
       const responseFirstPage = await api.get(
-        "/3/movie/upcoming?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=1",
+        '/3/movie/upcoming?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=1',
         {}
       );
 
       const responseSecondPage = await api.get(
-        "/3/movie/upcoming?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=2",
+        '/3/movie/upcoming?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=2',
         {}
       );
 
@@ -31,12 +31,12 @@ export default function Upcoming() {
     <>
       <div className="mt-2 p-8">
         <div className="flex justify-between">
-          <div>
-            <h1 className="text-white text-2xl pb-1 pl-1">Upcoming Premieres</h1>
+          <div className="pl-2 pb-2">
+            <h1 className="text-white text-2xl pb-1 pl-1 border-l-4 border-sky-700">Upcoming Premieres</h1>
           </div>
           <div>
             <Link to='upComing'>
-              <small className="pr-2 text-white">See more</small>
+              <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
             </Link>
           </div>
         </div>

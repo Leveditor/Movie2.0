@@ -24,12 +24,12 @@ export default function Serie() {
     <>
       <div className="mt-8 p-8 pt-0">
         <div className="flex justify-between">
-          <div>
-            <h1 className="text-2xl text-white pb-1 pl-1">Popular series</h1>
+          <div className="pl-2 pb-2">
+            <h1 className="text-2xl text-white pb-1 pl-1 border-l-4 border-sky-700">Popular series</h1>
           </div>
           <div>
             <Link to='popularSerie'>
-              <small className="pr-2 text-white">See more</small>
+              <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
             </Link>
           </div>
         </div>
