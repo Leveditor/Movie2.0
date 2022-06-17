@@ -16,7 +16,7 @@ export default function App() {
     <>
       <BrowserRouter>
           <Header />
-          <Search />
+         
         <Routes>
             <Route path="/" element={<Body />} />
             <Route path="/details/:id" element={<Details />} />
