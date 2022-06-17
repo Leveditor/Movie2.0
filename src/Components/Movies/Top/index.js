@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import api from "../../../services/api";
-import Slider from "react-slick";
-import settings from "../../Button";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import api from '../../../services/api';
+import settings from '../../Button';
+import Slider from 'react-slick';
 
 export default function Top() {
-  const [movies3, SetMovies] = useState([]);
+  const [movies, SetMovies] = useState([]);
 
   useEffect(() => {
     async function list() {
@@ -34,15 +34,13 @@ export default function Top() {
           </div>
         </div>
         <Slider {...settings}>
-          {movies3.map((movie) => {
+          {movies.map((movie) => {
             return (
               <div className="p-1" key={movie.id}>
                 <Link to={`details/${movie.id}`}>
                   <div>
-                    <img
-                      src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                      className="rounded-lg"
-                      alt={movie.title} />
+                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                      className="rounded-lg" alt={movie.title} />
                   </div>
                 </Link>
                 <div className="flex justify-between">
@@ -52,13 +50,8 @@ export default function Top() {
                     </small>
                   </div>
                   <div>
-                    <p
-                      className={
-                        movie.vote_average.toString().replace(".", "") > 70
-                          ? "text-green-400"
-                          : "text-yellow-500"
-                      }
-                    >
+                    <p className={movie.vote_average.toString().replace(".", "") > 70
+                          ? "text-green-400" : "text-yellow-500"}>
                       {movie.vote_average.toString().replace(".", "")}%
                     </p>
                   </div>
