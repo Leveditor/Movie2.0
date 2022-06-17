@@ -9,7 +9,6 @@ import TopRated from './Components/Movies/AllMoviesPages/TopRatedPage';
 import Upcoming from './Components/Movies/AllMoviesPages/UpcomingPage';
 import PopularSerie from './Components/Serie/AllSeriePages/PopularSeriePage';
 import TopRetedSerie from './Components/Serie/AllSeriePages/TopRatedPages';
-import Search from './Components/Search';
 
 export default function App() {
   return (
