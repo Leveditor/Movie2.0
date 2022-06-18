@@ -33,7 +33,7 @@ export default function TopRatedSerie() {
             <h1 className="text-2xl text-white pb-1 pl-1 border-l-4 border-sky-700">Top Rated Series</h1>
           </div>
           <div>
-            <Link to="top-rated-page">
+            <Link to="top-rated-serie-page">
               <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
             </Link>
           </div>

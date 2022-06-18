@@ -27,7 +27,7 @@ export default function App() {
             <Route path="/series-details/:id" element={<SerieDetails />} />
 
             <Route path="/top-serie-page" element={<PopularSeriePage />} />
-            <Route path="/top-rated-page" element={<TopRatedSeriePage />} />
+            <Route path="/top-rated-serie-page" element={<TopRatedSeriePage />} />
         </Routes>
       </BrowserRouter>
     </>
