@@ -4,8 +4,8 @@ import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 const navigationSerie = [
-    {name: 'Popular series', href:'/popularSerie'},
-    {name: 'Top Rated Series', href:'/topRetedSerie'},
+    {id: 1, name: 'Popular series', href:'/top-serie-page'},
+    {id: 2, name: 'Top Rated Series', href:'/top-rated-serie-page'},
 ];
 
 export default function MenuSerie() {
@@ -25,8 +25,8 @@ export default function MenuSerie() {
                     <Menu.Items className="origin-top-right right-0 sm:origin-top-left sm:left-0 absolute mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
                             {navigationSerie.map((item) => (
-                                <Menu.Item>
-                                    <Link key={item.name} to={item.href} className='text-gray-700 block px-4 py-2 text-sm'>
+                                <Menu.Item key={item.id}>
+                                    <Link to={item.href} className='text-gray-700 block px-4 py-2 text-sm'>
                                         {item.name}
                                     </Link>
                                 </Menu.Item>

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import ButtonPgaes from '../../../NextPageButton';
+import ButtonPage from '../../../NextPageButton';
 import { Link } from 'react-router-dom';
 import api from '../../../../services/api';
 
-export default function UpcomingPage() {
+export default function UpcomingPage({ handleNext, handleBack }) {
   const [allmovies, SetAllMovies] = useState([]);
-  const [page] = useState(1);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function list() {
@@ -51,7 +51,7 @@ export default function UpcomingPage() {
             })}
         </div>
 
-          <ButtonPgaes />
+        <ButtonPage setPage={setPage} page={page} handleNext={handleNext} handleBack={handleBack}/>
       </div>
     </>
   );

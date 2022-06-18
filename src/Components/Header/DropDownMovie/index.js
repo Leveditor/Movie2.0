@@ -4,9 +4,9 @@ import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 const navigation = [
-    {name: 'Most popular', href:'/tops'},
-    {name: 'The most voted', href:'/topRated'},
-    {name: 'Upcoming Premieres', href:'/upComing'},
+    {id:1, name: 'Most popular', href:'/top-movie-page'},
+    {id:2, name: 'The most voted', href:'/top-rated-page'},
+    {id:3, name: 'Upcoming Premieres', href:'/up-coming-page'},
 ];
 
 export default function MenuMovie() {
@@ -26,8 +26,8 @@ export default function MenuMovie() {
                     <Menu.Items className="origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                         <div className="py-1">
                             {navigation.map((item) => (
-                                <Menu.Item>
-                                    <Link key={item.name} to={item.href} className='text-gray-700 block px-4 py-2 text-sm'>
+                                <Menu.Item key={item.id}>
+                                    <Link  to={item.href} className='text-gray-700 block px-4 py-2 text-sm'>
                                         {item.name}
                                     </Link>
                                 </Menu.Item>

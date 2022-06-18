@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import ButtonPgaes from '../../../NextPageButton';
+import ButtonPage from '../../../NextPageButton';
 import { Link } from 'react-router-dom';
 import api from '../../../../services/api';
 
-export default function MovieTopPage() {
+export default function MovieTopPage({ handleNext, handleBack }) {
     const [allmovies, SetAllMovies] = useState([]);
-    const [page] = useState(1);
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
       async function list() {
@@ -27,28 +27,30 @@ export default function MovieTopPage() {
       </div>
       <div className="grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2">
         {allmovies.map((movie) => {
-          <div className="p-5" key={movie.id}>
-            <Link to={`/movie-datails/${movie.id}`}>
-              <div>
-                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg w-56" alt={movie.title} />
-              </div>
-            </Link>
-            <div className="flex justify-between">
-              <div>
-                <small className="text-gray-400">{movie.release_date}</small>
-              </div>
-              <div>
-                <p className={movie.vote_average.toString().replace(".", "") > 70
-                      ? "text-green-400" : "text-yellow-500"}>
-                  {movie.vote_average.toString().replace(".", "")}%
-                </p>
+          return (
+            <div className="p-5" key={movie.id}>
+              <Link to={`/movie-datails/${movie.id}`}>
+                <div>
+                  <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg w-56" alt={movie.title} />
+                </div>
+              </Link>
+              <div className="flex justify-between">
+                <div>
+                  <small className="text-gray-400">{movie.release_date}</small>
+                </div>
+                <div>
+                  <p className={movie.vote_average.toString().replace(".", "") > 70
+                        ? "text-green-400" : "text-yellow-500"}>
+                    {movie.vote_average.toString().replace(".", "")}%
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          );
         })}
         </div>
         
-          <ButtonPgaes />
+          <ButtonPage setPage={setPage} page={page} handleNext={handleNext} handleBack={handleBack}/>
       </div>
     </>
   );
