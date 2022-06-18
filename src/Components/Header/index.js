@@ -1,8 +1,8 @@
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
-import MenuMovie from './MenuMovie';
-import MenuSerie from './MenuSerie';
+import MenuMovie from './DropDownMovie';
+import MenuSerie from './DropDownSerie';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -42,6 +42,7 @@ export default function Header() {
             </div>
           </div>
 
+          {/* Mobile menu */}
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
             <Link to='/' className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white',
