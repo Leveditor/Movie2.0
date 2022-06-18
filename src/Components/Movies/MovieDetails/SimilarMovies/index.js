@@ -1,9 +1,8 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Dialog, Transition } from "@headlessui/react";
-import api from "../../../../services/api";
-import { useParams } from "react-router-dom";
+import { Fragment, useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Dialog, Transition } from '@headlessui/react';
+import { useParams } from 'react-router-dom';
+import api from '../../../../services/api';
 
 export default function Similar() {
   const [open, setOpen] = useState(false);
@@ -13,9 +12,7 @@ export default function Similar() {
 
   useEffect(() => {
     async function loadFilme() {
-      const similiarMovies = await api.get(
-        `/3/movie/${id}/similar?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`
-      );
+      const similiarMovies = await api.get(`/3/movie/${id}/similar?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
 
       setSimiliarMovies(similiarMovies.data);
     }
@@ -39,14 +36,14 @@ export default function Similar() {
           <div className="fixed z-10 inset-0 overflow-y-auto">
             <div className="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
               <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                enterTo="opacity-100 translate-y-0 sm:scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-                leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+                        enterTo="opacity-100 translate-y-0 sm:scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                        leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
                 <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 ">
                   <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div className="flex justify-between">
                       <div>
                         <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                          Similar Movies
+                           Similar Movies
                         </Dialog.Title>
                       </div>
                       <div>
@@ -57,23 +54,23 @@ export default function Similar() {
                       <div className="mt-3 text-center sm:mt-0 sm:text-left">
                         <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2">
                           {similarMovies.results ? similarMovies.results.map((movie) => (
-                                <div className="w-36 pl-5 pt-5" key={movie.id}>
-                                  <Link to={`/movie-datails/${movie.id}`} onClick={() => setOpen(false)}>
+                            <div className="w-36 pl-5 pt-5" key={movie.id}>
+                              <Link to={`/movie-datails/${movie.id}`} onClick={() => setOpen(false)}>
+                                <div>
+                                  <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg" alt={movie.title}/>
+                                  <div className="flex">
+                                    <div className="pr-7">
+                                      <small>{movie.release_date}</small>
+                                    </div>
                                     <div>
-                                      <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg" alt={movie.title}/>
-                                      <div className="flex">
-                                          <div className="pr-7">
-                                            <small>{movie.release_date}</small>
-                                          </div>
-                                          <div>
-                                            <p className={ movie.vote_average.toString().replace(".", "").substr(0, 2) > 70 ? "text-green-400" : "text-yellow-500" }>
-                                                { movie.vote_average.toString().replace(".", "").substr(0, 2) }%</p>
-                                            </div>
-                                          </div>
+                                      <p className={ movie.vote_average.toString().replace(".", "").substr(0, 2) > 70 ? "text-green-400" : "text-yellow-500" }>
+                                          { movie.vote_average.toString().replace(".", "").substr(0, 2) }%</p>
                                       </div>
-                                  </Link>
-                                </div>
-                              )): []}
+                                    </div>
+                                  </div>
+                              </Link>
+                            </div>
+                          )): []}
                         </div>
                       </div>
                     </div>

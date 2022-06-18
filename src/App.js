@@ -4,9 +4,9 @@ import Header from './Components/Header/index';
 import Body from './Components/Home';
 import MovieDetails from './Components/Movies/MovieDetails';
 import SerieDetails from './Components/Serie/SerieDetsils';
-import MovieTop from './Components/Movies/AllMoviesPages/MoviePage';
-import TopRated from './Components/Movies/AllMoviesPages/TopRatedPage';
-import Upcoming from './Components/Movies/AllMoviesPages/UpcomingPage';
+import MovieTop from './Components/Movies/MoviePages/TopMovies';
+import TopRated from './Components/Movies/MoviePages/TopRatedPage';
+import Upcoming from './Components/Movies/MoviePages/UpcomingPage';
 import PopularSerie from './Components/Serie/AllSeriePages/PopularSeriePage';
 import TopRetedSerie from './Components/Serie/AllSeriePages/TopRatedPages';
 

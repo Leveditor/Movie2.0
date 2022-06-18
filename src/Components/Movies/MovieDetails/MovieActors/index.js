@@ -1,24 +1,24 @@
-import { Fragment, useRef, useState, useEffect } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import api from "../../../../services/api";
-import { useParams } from "react-router-dom";
+import { Fragment, useRef, useState, useEffect } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import api from '../../../../services/api';
+import { useParams } from 'react-router-dom';
 
 export default function People() {
   const [open, setOpen] = useState(false);
-  const [people, setPeople] = useState({});
+  const [actors, setActors] = useState({});
   const { id } = useParams();
 
   const cancelButtonRef = useRef(null);
 
-  useEffect(() => {
-    async function loadFilme() {
-      const peopleMovie = await api.get(`/3/movie/${id}/credits?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
+    useEffect(() => {
+      async function loadFilme() {
+        const peopleMovie = await api.get(`/3/movie/${id}/credits?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
 
-      setPeople(peopleMovie.data);
-    }
+        setActors(peopleMovie.data);
+      }
 
-    loadFilme();
-  }, [id]);
+      loadFilme();
+    }, [id]);
   
   return (
     <>
@@ -53,17 +53,15 @@ export default function People() {
                     <div className="sm:flex sm:items-start">
                       <div className="mt-3 text-center sm:mt-0 sm:text-left">
                         <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2">
-                          {people.cast ? people.cast.map((people) => (
-                                <div className="w-36 pl-5 pt-5">
-                                  <img src={`https://image.tmdb.org/t/p/original/${people.profile_path}`}
-                                    className="rounded-lg w-72" alt={people.name} />
+                          {actors.cast ? actors.cast.map((actor) => (
+                              <div className="w-36 pl-5 pt-5">
+                                <img src={`https://image.tmdb.org/t/p/original/${actor.profile_path}`} className="rounded-lg w-72" alt={actor.name} />
 
-                                  {people.profile_path == null ? ("") : (
-                                    <p className="text-xs">{people.name}</p>
-                                  )}
-                                </div>
-                              ))
-                            : []}
+                                {actor.profile_path == null ? ("") : (
+                                  <p className="text-xs">{actor.name}</p>
+                                )}
+                              </div>
+                          )) : []}
                         </div>
                       </div>
                     </div>

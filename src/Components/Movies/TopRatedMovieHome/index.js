@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import api from "../../../services/api";
-import Slider from "react-slick";
-import setting from "../../SliderButton";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import api from '../../../services/api';
+import SliderButton from 'react-slick';
+import setting from '../../SliderButton';
 
 export default function TopRated() {
   const [firstPage, SetFirstPage] = useState([]);
@@ -10,13 +10,11 @@ export default function TopRated() {
 
   useEffect(() => {
     async function list() {
-      const responseFirstPage = await api.get(
-        "/3/movie/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=1",
+      const responseFirstPage = await api.get("/3/movie/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=1",
         {}
       );
 
-      const responseSecondPage = await api.get(
-        "/3/movie/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=2",
+      const responseSecondPage = await api.get("/3/movie/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=2",
         {}
       );
 
@@ -40,17 +38,14 @@ export default function TopRated() {
             </Link>
           </div>
         </div>
-        <Slider {...setting}>
+        
+        <SliderButton {...setting}>
           {firstPage.map((movie) => {
             return (
               <div className="p-1" key={movie.id}>
                 <Link to={`movie-datails/${movie.id}`}>
                   <div>
-                    <img
-                      src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                      alt={movie.title}
-                      className="rounded-lg"
-                    />
+                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg" alt={movie.title} />
                   </div>
                 </Link>
                 <div className="flex justify-between">
@@ -60,13 +55,8 @@ export default function TopRated() {
                     </small>
                   </div>
                   <div>
-                    <p
-                      className={
-                        movie.vote_average.toString().replace(".", "") > 70
-                          ? "text-green-400"
-                          : "text-yellow-500"
-                      }
-                    >
+                    <p className={movie.vote_average.toString().replace(".", "") > 70
+                          ? "text-green-400" : "text-yellow-500"}>
                       {movie.vote_average.toString().replace(".", "")}%
                     </p>
                   </div>
@@ -74,20 +64,17 @@ export default function TopRated() {
               </div>
             );
           })}
-        </Slider>
+        </SliderButton>
       </div>
+
       <div className="p-8 pt-0">
-        <Slider {...setting}>
+        <SliderButton {...setting}>
           {secondPage.map((movie) => {
             return (
               <div className="p-1" key={movie.id}>
                 <Link to={`movie-datails/${movie.id}`}>
                   <div>
-                    <img
-                      src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                      alt={movie.title}
-                      className="rounded-lg"
-                    />
+                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg" alt={movie.title} />
                   </div>
                 </Link>
                 <div className="flex justify-between">
@@ -97,13 +84,8 @@ export default function TopRated() {
                     </small>
                   </div>
                   <div>
-                    <p
-                      className={
-                        movie.vote_average.toString().replace(".", "") > 70
-                          ? "text-green-400"
-                          : "text-yellow-500"
-                      }
-                    >
+                    <p className={movie.vote_average.toString().replace(".", "") > 70
+                          ? "text-green-400" : "text-yellow-500"}>
                       {movie.vote_average.toString().replace(".", "")}%
                     </p>
                   </div>
@@ -111,7 +93,7 @@ export default function TopRated() {
               </div>
             );
           })}
-        </Slider>
+        </SliderButton>
       </div>
     </>
   );

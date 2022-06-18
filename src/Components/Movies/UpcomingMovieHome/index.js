@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../../services/api';
-import Slider from 'react-slick';
+import SliderButton from 'react-slick';
 import settings from '../../SliderButton';
 
 export default function Upcoming() {
@@ -10,13 +10,11 @@ export default function Upcoming() {
 
   useEffect(() => {
     async function list() {
-      const responseFirstPage = await api.get(
-        '/3/movie/upcoming?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=1',
+      const responseFirstPage = await api.get('/3/movie/upcoming?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=1',
         {}
       );
 
-      const responseSecondPage = await api.get(
-        '/3/movie/upcoming?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=2',
+      const responseSecondPage = await api.get('/3/movie/upcoming?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=2',
         {}
       );
 
@@ -40,15 +38,14 @@ export default function Upcoming() {
             </Link>
           </div>
         </div>
-        <Slider {...settings}>
+
+        <SliderButton {...settings}>
           {firstPage.map((movie) => {
             return (
               <div className="p-1" key={movie.id}>
                 <Link to={`movie-datails/${movie.id}`}>
                   <div>
-                    <img
-                      src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="rounded-lg"
-                      alt={movie.title}/>
+                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="rounded-lg" alt={movie.title}/>
                   </div>
                 </Link>
                 <small className="pl-1 text-gray-400">
@@ -57,17 +54,17 @@ export default function Upcoming() {
               </div>
             );
           })}
-        </Slider>
+        </SliderButton>
       </div>
+      
       <div className="p-8 pt-0">
-        <Slider {...settings}>
+        <SliderButton {...settings}>
           {secondPage.map((movie) => {
             return (
               <div className="p-1" key={movie.id}>
                 <Link to={`movie-datails/${movie.id}`}>
                   <div>
-                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="rounded-lg"
-                      alt={movie.title} />
+                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="rounded-lg" alt={movie.title} />
                   </div>
                 </Link>
                 <small className="pl-1 text-gray-400">
@@ -76,7 +73,7 @@ export default function Upcoming() {
               </div>
             );
           })}
-        </Slider>
+        </SliderButton>
       </div>
     </>
   );

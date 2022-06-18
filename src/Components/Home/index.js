@@ -1,6 +1,6 @@
-import Top from '../Movies/Top';
-import Upcoming from '../Movies/Upcoming';
-import TopRated from '../Movies/TopRated';
+import Top from '../Movies/TopMovieHome';
+import Upcoming from '../Movies/UpcomingMovieHome';
+import TopRated from '../Movies/TopRatedMovieHome';
 import Serie from '../Serie/Popular';
 import TopRatedSerie from "../Serie/TopRated";
 
