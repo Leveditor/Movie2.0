@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import api from "../../../../services/api";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import api from '../../../../services/api';
 
 export default function Trailer() {
     const { id } = useParams();
-  const [videos, setVideos] = useState({});
+    const [videos, setVideos] = useState({});
 
   useEffect(() => {
     async function loadVideo() {

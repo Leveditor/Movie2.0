@@ -1,8 +1,8 @@
-import { Fragment, useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Dialog, Transition } from "@headlessui/react";
-import api from "../../../../services/api";
-import { useParams } from "react-router-dom";
+import { Fragment, useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Dialog, Transition } from '@headlessui/react';
+import { useParams } from 'react-router-dom';
+import api from '../../../../services/api';
 
 export default function SimilarSerie() {
   const [open, setOpen] = useState(false);
@@ -70,7 +70,7 @@ export default function SimilarSerie() {
                                     </div>
                                 </Link>
                               </div>
-                              )) : []}
+                          )) : []}
                         </div>
                       </div>
                     </div>

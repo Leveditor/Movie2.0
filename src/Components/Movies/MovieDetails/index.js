@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../../../services/api';
-import People from './MovieActors';
+import MovieActors from './MovieActors';
 import Similar from './SimilarMovies';
 import Trailer from './TrailerMovie';
 
@@ -48,7 +48,8 @@ export default function MovieDetails() {
           <p className="text-gray-400 sm:pl-5 pt-1 ">{movie.release_date}</p>
           <p className="text-white sm:pl-5 pt-4">{movie.tagline}</p>
           <p className="text-white sm:pl-5 pr-3 pt-4 text-justify">{movie.overview}</p>
-          <People />
+
+          <MovieActors />
           <Similar />
         </div>
       </div>

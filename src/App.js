@@ -2,11 +2,13 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header/index';
 import Body from './Components/Home';
+
 import MovieTopPage from './Components/Movies/MoviePages/TopMoviesPage';
 import TopRatedPage from './Components/Movies/MoviePages/TopRatedPage';
 import UpcomingPage from './Components/Movies/MoviePages/UpcomingPage';
+
 import MovieDetails from './Components/Movies/MovieDetails';
-import SerieDetails from './Components/Serie/SerieDetsils';
+import SerieDetails from './Components/Serie/SerieDetails';
 
 import PopularSeriePage from './Components/Serie/SeriePage/PopularSeriePage';
 import TopRatedSeriePage from './Components/Serie/SeriePage/TopRatedSeriePage';

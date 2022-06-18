@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import api from '../../../../services/api';
 import { useParams } from 'react-router-dom';
 
-export default function People() {
+export default function MovieActors() {
   const [open, setOpen] = useState(false);
   const [actors, setActors] = useState({});
   const { id } = useParams();
@@ -22,7 +22,7 @@ export default function People() {
   
   return (
     <>
-      <button className="ml-5 mt-5 pl-5 pr-5 bg-green-700 text-white" onClick={() => setOpen(true)}>
+      <button className="ml-5 mt-5 pl-5 pr-5 bg-green-700 text-white mb-5" onClick={() => setOpen(true)}>
         See Cast
       </button>
 
