@@ -58,7 +58,7 @@ export default function Similar() {
                         <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2">
                           {similarMovies.results ? similarMovies.results.map((movie) => (
                                 <div className="w-36 pl-5 pt-5" key={movie.id}>
-                                  <Link to={`/details/${movie.id}`} onClick={() => setOpen(false)}>
+                                  <Link to={`/movie-datails/${movie.id}`} onClick={() => setOpen(false)}>
                                     <div>
                                       <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg" alt={movie.title}/>
                                       <div className="flex">

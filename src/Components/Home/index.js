@@ -1,4 +1,3 @@
-import React from "react";
 import Top from '../Movies/Top';
 import Upcoming from '../Movies/Upcoming';
 import TopRated from '../Movies/TopRated';

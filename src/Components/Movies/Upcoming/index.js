@@ -44,7 +44,7 @@ export default function Upcoming() {
           {firstPage.map((movie) => {
             return (
               <div className="p-1" key={movie.id}>
-                <Link to={`details/${movie.id}`}>
+                <Link to={`movie-datails/${movie.id}`}>
                   <div>
                     <img
                       src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="rounded-lg"
@@ -64,7 +64,7 @@ export default function Upcoming() {
           {secondPage.map((movie) => {
             return (
               <div className="p-1" key={movie.id}>
-                <Link to={`details/${movie.id}`}>
+                <Link to={`movie-datails/${movie.id}`}>
                   <div>
                     <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="rounded-lg"
                       alt={movie.title} />

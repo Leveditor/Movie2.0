@@ -44,7 +44,7 @@ export default function TopRated() {
           {firstPage.map((movie) => {
             return (
               <div className="p-1" key={movie.id}>
-                <Link to={`details/${movie.id}`}>
+                <Link to={`movie-datails/${movie.id}`}>
                   <div>
                     <img
                       src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
@@ -81,7 +81,7 @@ export default function TopRated() {
           {secondPage.map((movie) => {
             return (
               <div className="p-1" key={movie.id}>
-                <Link to={`details/${movie.id}`}>
+                <Link to={`movie-datails/${movie.id}`}>
                   <div>
                     <img
                       src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
