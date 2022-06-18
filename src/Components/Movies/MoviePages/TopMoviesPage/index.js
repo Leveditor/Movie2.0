@@ -3,7 +3,7 @@ import ButtonPgaes from '../../../NextPageButton';
 import { Link } from 'react-router-dom';
 import api from '../../../../services/api';
 
-export default function MovieTop() {
+export default function MovieTopPage() {
     const [allmovies, SetAllMovies] = useState([]);
     const [page] = useState(1);
 
