@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../../services/api';
 import Slider from 'react-slick';
-import settings from '../../Button';
+import settings from '../../SliderButton';
 
 export default function Upcoming() {
   const [firstPage, SetFirstPage] = useState([]);

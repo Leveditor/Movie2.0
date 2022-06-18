@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../../services/api';
-import settings from '../../Button';
+import settings from '../../SliderButton';
 import Slider from 'react-slick';
 
 export default function Top() {

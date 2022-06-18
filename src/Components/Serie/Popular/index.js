@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../../../services/api";
 import Slider from "react-slick";
-import settings from '../../Button';
+import settings from '../../SliderButton';
 import { Link } from "react-router-dom";
 
 export default function Serie() {
