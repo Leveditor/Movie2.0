@@ -55,21 +55,21 @@ export default function SimilarSerie() {
                         <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2">
                           {similarSerie.results ? similarSerie.results.map((serie) => (
                                 <div className="w-36 pl-5 pt-5" key={serie.id}>
-                                <Link to={`/details/${serie.id}`} onClick={() => setOpen(false)}>
-                                  <div>
-                                    <img src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`} className="rounded-lg" alt={serie.title}/>
-                                    <div className="flex">
-                                        <div className="pr-7">
-                                          <small>{serie.first_air_date}</small>
-                                        </div>
-                                        <div>
-                                          <p className={ serie.vote_average.toString().replace(".", "").substr(0, 2) > 70 ? "text-green-400" : "text-yellow-500" }>
-                                              { serie.vote_average.toString().replace(".", "").substr(0, 2) }%</p>
+                                  <Link to={`/series-details/${serie.id}`} onClick={() => setOpen(false)}>
+                                    <div>
+                                      <img src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`} className="rounded-lg" alt={serie.title}/>
+                                      <div className="flex">
+                                          <div className="pr-7">
+                                            <small>{serie.first_air_date}</small>
                                           </div>
-                                        </div>
-                                    </div>
-                                </Link>
-                              </div>
+                                          <div>
+                                            <p className={ serie.vote_average.toString().replace(".", "").substr(0, 2) > 70 ? "text-green-400" : "text-yellow-500" }>
+                                                { serie.vote_average.toString().replace(".", "").substr(0, 2) }%</p>
+                                            </div>
+                                          </div>
+                                      </div>
+                                  </Link>
+                                </div>
                           )) : []}
                         </div>
                       </div>
