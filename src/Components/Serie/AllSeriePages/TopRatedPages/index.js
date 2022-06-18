@@ -36,7 +36,7 @@ export default function PopularSerie() {
             {allSeries.map((serie) => {
             return (
                 <div className="p-5" key={serie.id}>
-                <Link to={`/details-series/${serie.id}`}>
+                <Link to={`/series-details/${serie.id}`}>
                     <div>
                     <img src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`}
                         className="rounded-lg w-56" alt={serie.title} />

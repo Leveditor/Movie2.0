@@ -45,7 +45,7 @@ export default function TopRatedSerie() {
             return (
               <div className="p-1" key={movie.id}>
                 <div>
-                <Link to={`details-series/${movie.id}`}>
+                <Link to={`series-details/${movie.id}`}>
                   <div>
                     <img
                       src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
@@ -78,7 +78,7 @@ export default function TopRatedSerie() {
             return (
               <div className="p-1" key={movie.id}>
                 <div>
-                <Link to={`details-series/${movie.id}`}>
+                <Link to={`series-details/${movie.id}`}>
                   <div>
                     <img
                       src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}

@@ -36,7 +36,7 @@ export default function MovieTop() {
         {allmovies.map((movie) => {
           return (
             <div className="p-5" key={movie.id}>
-              <Link to={`/details/${movie.id}`}>
+              <Link to={`/movie-datails/${movie.id}`}>
                 <div>
                   <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                     className="rounded-lg w-56" alt={movie.title} />

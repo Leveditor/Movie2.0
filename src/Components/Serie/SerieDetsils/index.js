@@ -5,7 +5,7 @@ import People from "./peopleSerie";
 import Similar from "./Similar";
 import Trailer from "./TrailerSeries";
 
-export default function Details() {
+export default function SerieDetails() {
   const { id } = useParams();
   const [serie, setDetailsSerie] = useState({});
 
