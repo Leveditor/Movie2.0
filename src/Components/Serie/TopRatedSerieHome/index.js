@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import api from "../../../services/api";
-import Slider from "react-slick";
+import SliderButton from 'react-slick';
 import settings from '../../SliderButton';
 import { Link } from "react-router-dom";
 
@@ -10,13 +10,11 @@ export default function TopRatedSerie() {
 
   useEffect(() => {
     async function list() {
-      const responseFirstPage = await api.get(
-        "/3/tv/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=1",
+      const responseFirstPage = await api.get("/3/tv/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=1",
         {}
       );
 
-      const responseSecondPage = await api.get(
-        "/3/tv/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=2",
+      const responseSecondPage = await api.get("/3/tv/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=2",
         {}
       );
 
@@ -35,22 +33,20 @@ export default function TopRatedSerie() {
             <h1 className="text-2xl text-white pb-1 pl-1 border-l-4 border-sky-700">Top Rated Series</h1>
           </div>
           <div>
-            <Link to="topRetedSerie">
+            <Link to="top-rated-page">
               <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
             </Link>
           </div>
         </div>
-        <Slider {...settings}>
+
+        <SliderButton {...settings}>
           {firstPage.map((movie) => {
             return (
               <div className="p-1" key={movie.id}>
                 <div>
                 <Link to={`series-details/${movie.id}`}>
                   <div>
-                    <img
-                      src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                      className="rounded-lg"
-                      alt={movie.title} />
+                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg" alt={movie.title} />
                   </div>
                 </Link>
                 </div>
@@ -69,11 +65,11 @@ export default function TopRatedSerie() {
               </div>
             );
           })}
-        </Slider>
+        </SliderButton>
       </div>
 
       <div className="p-8 pt-0">
-        <Slider {...settings}>
+        <SliderButton {...settings}>
           {secondPage.map((movie) => {
             return (
               <div className="p-1" key={movie.id}>
@@ -102,7 +98,7 @@ export default function TopRatedSerie() {
               </div>
             );
           })}
-        </Slider>
+        </SliderButton>
       </div>
     </>
   );

@@ -7,8 +7,9 @@ import TopRatedPage from './Components/Movies/MoviePages/TopRatedPage';
 import UpcomingPage from './Components/Movies/MoviePages/UpcomingPage';
 import MovieDetails from './Components/Movies/MovieDetails';
 import SerieDetails from './Components/Serie/SerieDetsils';
-import PopularSerie from './Components/Serie/AllSeriePages/PopularSeriePage';
-import TopRetedSerie from './Components/Serie/AllSeriePages/TopRatedPages';
+
+import PopularSeriePage from './Components/Serie/SeriePage/PopularSeriePage';
+import TopRatedSeriePage from './Components/Serie/SeriePage/TopRatedSeriePage';
 
 export default function App() {
   return (
@@ -25,8 +26,8 @@ export default function App() {
             <Route path="/movie-datails/:id" element={<MovieDetails />} />
             <Route path="/series-details/:id" element={<SerieDetails />} />
 
-            <Route path="/popularSerie" element={<PopularSerie />} />
-            <Route path="/topRetedSerie" element={<TopRetedSerie />} />
+            <Route path="/top-serie-page" element={<PopularSeriePage />} />
+            <Route path="/top-rated-page" element={<TopRatedSeriePage />} />
         </Routes>
       </BrowserRouter>
     </>

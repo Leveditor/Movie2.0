@@ -1,8 +1,8 @@
 import TopMovieHome from '../Movies/TopMovieHome';
 import Upcoming from '../Movies/UpcomingMovieHome';
 import TopRated from '../Movies/TopRatedMovieHome';
-import Serie from '../Serie/Popular';
-import TopRatedSerie from "../Serie/TopRated";
+import Serie from '../Serie/TopSerieHome';
+import TopRatedSerie from "../Serie/TopRatedSerieHome";
 
 export default function App() {
   return (
