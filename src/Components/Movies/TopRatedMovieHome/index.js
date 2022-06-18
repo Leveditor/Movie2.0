@@ -33,7 +33,7 @@ export default function TopRated() {
             <h1 className="text-white text-2xl pb-1 pl-1 border-l-4 border-sky-700">The most voted</h1>
           </div>
           <div>
-            <Link to='topRated'>
+            <Link to='top-rated-page'>
               <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
             </Link>
           </div>
