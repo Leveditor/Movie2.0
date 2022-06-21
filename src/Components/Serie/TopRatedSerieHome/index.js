@@ -27,29 +27,23 @@ export default function TopRatedSerie() {
 
   return (
     <>
+   
+        
       <div className="mt-8 p-8 pt-0">
-        <div className="flex justify-between">
-          <div className="pl-2 pb-2">
-            <h1 className="text-2xl text-white pb-1 pl-1 border-l-4 border-sky-700">Top Rated Series</h1>
-          </div>
-          <div>
-            <Link to="top-rated-serie-page">
-              <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
-            </Link>
-          </div>
+        <div className="flex justify-between flex-wrap">
+          <h1 className="text-white text-2xl pb-1 pl-1 border-l-4 border-sky-700">Top Rated Series</h1>
+          <Link to="top-rated-serie-page">
+            <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
+          </Link>
         </div>
 
         <SliderButton {...settings}>
           {firstPage.map((series) => {
             return (
               <div className="p-1" key={series.id}>
-                <div>
                 <Link to={`series-details/${series.id}`}>
-                  <div>
                     <img src={`https://image.tmdb.org/t/p/original/${series.poster_path}`} className="rounded-lg" alt={series.title} />
-                  </div>
                 </Link>
-                </div>
                 <div className="flex justify-between">
                   <div>
                     <small className="pl-1 text-gray-400">{series.first_air_date}</small>

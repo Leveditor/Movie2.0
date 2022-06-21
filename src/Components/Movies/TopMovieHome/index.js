@@ -22,15 +22,11 @@ export default function TopMovieHome() {
   return (
     <>
       <div className="mt-12 p-8">
-        <div className="flex justify-between">
-          <div className="pl-2 pb-2">
-            <h3 className="text-2xl text-white pb-1 pl-1 border-l-4 border-sky-700">Most Popular</h3>
-          </div>
-          <div>
-            <Link to='top-movie-page'>
-              <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
-            </Link>
-          </div>
+        <div className="flex justify-between flex-wrap">
+          <h1 className="text-white text-2xl pb-1 pl-1 border-l-4 border-sky-700">Most Popular</h1>
+          <Link to='top-movie-page'>
+            <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
+          </Link>
         </div>
         
         <SliderButton {...settings}>
@@ -38,9 +34,7 @@ export default function TopMovieHome() {
             return (
               <div className="p-1" key={movie.id}>
                 <Link to={`movie-datails/${movie.id}`}>
-                  <div>
-                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg" alt={movie.title} />
-                  </div>
+                  <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg" alt={movie.title} />
                 </Link>
                 <div className="flex justify-between">
                   <div>

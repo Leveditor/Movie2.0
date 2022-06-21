@@ -21,16 +21,13 @@ export default function Serie() {
 
   return (
     <>
+     
       <div className="mt-8 p-8 pt-0">
-        <div className="flex justify-between">
-          <div className="pl-2 pb-2">
-            <h1 className="text-2xl text-white pb-1 pl-1 border-l-4 border-sky-700">Popular series</h1>
-          </div>
-          <div>
-            <Link to='top-serie-page'>
-              <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
-            </Link>
-          </div>
+      <div className="flex justify-between flex-wrap">
+          <h1 className="text-white text-2xl pb-1 pl-1 border-l-4 border-sky-700">Popular series</h1>
+          <Link to='top-serie-page'>
+            <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
+          </Link>
         </div>
 
         <SliderButton {...settings}>
@@ -38,9 +35,7 @@ export default function Serie() {
             return (
               <div className="p-1" key={series.id}>
                 <Link to={`series-details/${series.id}`}>
-                  <div>
-                    <img src={`https://image.tmdb.org/t/p/original/${series.poster_path}`} className="rounded-lg" alt={series.title} />
-                  </div>
+                  <img src={`https://image.tmdb.org/t/p/original/${series.poster_path}`} className="rounded-lg" alt={series.title} />
                 </Link>
                 <div className="flex justify-between">
                   <div>

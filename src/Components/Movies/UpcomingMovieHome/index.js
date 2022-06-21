@@ -28,15 +28,11 @@ export default function Upcoming() {
   return (
     <>
       <div className="mt-2 p-8">
-        <div className="flex justify-between">
-          <div className="pl-2 pb-2">
+        <div className="flex justify-between flex-wrap">
             <h1 className="text-white text-2xl pb-1 pl-1 border-l-4 border-sky-700">Upcoming Premieres</h1>
-          </div>
-          <div>
             <Link to='up-coming-page'>
               <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
             </Link>
-          </div>
         </div>
 
         <SliderButton {...settings}>
@@ -44,9 +40,7 @@ export default function Upcoming() {
             return (
               <div className="p-1" key={movie.id}>
                 <Link to={`movie-datails/${movie.id}`}>
-                  <div>
-                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="rounded-lg" alt={movie.title}/>
-                  </div>
+                  <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="rounded-lg" alt={movie.title}/>
                 </Link>
                 <div className="flex justify-between">
                   <div>
