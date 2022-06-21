@@ -31,7 +31,7 @@ export default function SerieDetails() {
           <Trailer />
       </div>
 
-      <div className="sm:grid grid-flow-col  sm:ml-12 mt-10 ml-2">
+      <div className="sm:grid grid-flow-col sm:ml-12 mt-10 ml-2">
         <div>
           <img src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`} className="rounded-lg imgCard pl-10 sm:pl-0" alt={serie.title}/>
         </div>

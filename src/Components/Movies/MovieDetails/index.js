@@ -28,13 +28,13 @@ export default function MovieDetails() {
 
   return (
     <>
-      <div style={styleTrailer}>
+      <div style={styleTrailer} className='trailer'>
         <Trailer />
       </div>
 
       <div className="sm:grid grid-flow-col sm:ml-12 mt-10 ml-2">
           <div>
-            <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg imgCard" alt={movie.title} />
+            <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg imgCard pl-10 sm:pl-0" alt={movie.title} />
           </div>
         <div>
           <h1 className="text-white sm:pl-5 pt-8 text-4xl">{movie.original_title}</h1>

@@ -56,18 +56,8 @@ export default function Similar() {
                           {similarMovies.results ? similarMovies.results.map((movie) => (
                             <div className="w-36 pl-5 pt-5" key={movie.id}>
                               <Link to={`/movie-datails/${movie.id}`} onClick={() => setOpen(false)}>
-                                <div>
                                   <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} className="rounded-lg" alt={movie.title}/>
-                                  <div className="flex">
-                                    <div className="pr-7">
-                                      <small>{movie.release_date}</small>
-                                    </div>
-                                    <div>
-                                      <p className={ movie.vote_average.toString().replace(".", "").substr(0, 2) > 70 ? "text-green-400" : "text-yellow-500" }>
-                                          { movie.vote_average.toString().replace(".", "").substr(0, 2) }%</p>
-                                      </div>
-                                    </div>
-                                  </div>
+                                  <small>{movie.release_date}</small>
                               </Link>
                             </div>
                           )): []}

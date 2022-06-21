@@ -8,8 +8,6 @@ export default function ButtonPage({setPage, page}) {
         setPage(page - 1);
     }
 
-
-
   return (
     <>
         <div className="flex justify-center items-center space-x-1">
