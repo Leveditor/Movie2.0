@@ -3,12 +3,29 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
 import MenuMovie from './DropDownMovie';
 import MenuSerie from './DropDownSerie';
+import { i18n } from '../../translate/i18n';
+import React, { useState } from 'react';
+import usa from './eua.png'
+import bra from './brasil.png'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
+const I18N_STORAGE_KEY = 'i18nextLng';
+const handleSelectChange = event => {
+  localStorage.setItem(I18N_STORAGE_KEY, event.target.value);
+  
+  window.location.reload();
+}
+
+
 export default function Header() {
+
+  const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
+
+  
+ 
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -31,14 +48,23 @@ export default function Header() {
                   <div className="flex space-x-4">
                       <Link to='/' className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-lg font-medium')}>
-                          Home
+                          {i18n.t('header.home')}
                       </Link>
-                      
+
                       <MenuMovie />
                       <MenuSerie />
+                      
+                      
                   </div>
                 </div>
+                
               </div>
+    
+              { language === 'en-US' ? <img src={usa} /> : <img src={bra} /> }
+              <select onChange={handleSelectChange} value={language} className='bg-gray-800 text-white'>
+                <option value='pt-BR'>Português</option>
+                <option value='en-US'>English</option>
+              </select>
             </div>
           </div>
 
@@ -46,7 +72,7 @@ export default function Header() {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
             <Link to='/' className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white',
-                   'px-3 py-2 rounded-md text-lg font-medium')}>Home</Link>
+                   'px-3 py-2 rounded-md text-lg font-medium')}>{i18n.t('titles.home')}</Link>
               <MenuMovie />
               <MenuSerie />
             </div>

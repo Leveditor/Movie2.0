@@ -3,13 +3,23 @@ import { Link } from 'react-router-dom';
 import api from '../../../services/api';
 import SliderButton from 'react-slick';
 import settings from '../../SliderButton';
+import { i18n } from '../../../translate/i18n';
+
+const I18N_STORAGE_KEY = 'i18nextLng';
+const handleSelectChange = event => {
+  localStorage.setItem(I18N_STORAGE_KEY, event.target.value);
+  
+  window.location.reload();
+}
+
 
 export default function TopMovieHome() {
   const [movies, SetMovies] = useState([]);
+  const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
 
   useEffect(() => {
     async function list() {
-      const response = await api.get("/3/movie/popular?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=1",
+      const response = await api.get(`/3/movie/popular?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=${language}&page=1`,
         {}
       );
 
@@ -18,6 +28,7 @@ export default function TopMovieHome() {
 
     list();
   }, []);
+
 
   return (
     <>

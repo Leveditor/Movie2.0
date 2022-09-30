@@ -2,6 +2,7 @@ import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { i18n } from '../../../translate/i18n';
 
 const navigationSerie = [
     {id: 1, name: 'Popular series', href:'/top-serie-page'},
@@ -14,7 +15,7 @@ export default function MenuSerie() {
             <Menu as="div" className="relative inline-block text-left">
                 <div>
                     <Menu.Button className="inline-flex justify-center rounded-md text-lg px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">
-                        Serie
+                        {i18n.t('header.serie')}
                         <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                     </Menu.Button>
                 </div>
