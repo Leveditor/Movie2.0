@@ -2,11 +2,12 @@ import { Menu, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { i18n } from '../../../translate/i18n';
 
 const navigation = [
-    {id:1, name: 'Most popular', href:'/top-movie-page'},
-    {id:2, name: 'The most voted', href:'/top-rated-page'},
-    {id:3, name: 'Upcoming Premieres', href:'/up-coming-page'},
+    {id:1, name: `${i18n.t('movies.popular')}`, href:'/top-movie-page'},
+    {id:2, name: `${i18n.t('movies.mostVoted')}`, href:'/top-rated-page'},
+    {id:3, name: `${i18n.t('movies.upComing')}`, href:'/up-coming-page'},
 ];
 
 export default function MenuMovie() {
@@ -15,7 +16,7 @@ export default function MenuMovie() {
             <Menu as="div" className="relative inline-block text-left">
                 <div>
                     <Menu.Button className="inline-flex justify-center rounded-md text-lg px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white">
-                        Movies
+                        {i18n.t('header.movie')}
                         <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                     </Menu.Button>
                 </div>

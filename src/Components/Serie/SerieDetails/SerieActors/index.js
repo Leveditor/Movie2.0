@@ -2,28 +2,31 @@ import { Fragment, useRef, useState, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { useParams } from 'react-router-dom';
 import api from '../../../../services/api';
+import { i18n } from '../../../../translate/i18n';
 
+const I18N_STORAGE_KEY = 'i18nextLng';
 export default function SerieActors() {
   const [open, setOpen] = useState(false);
   const [actors, setActors] = useState({});
+  const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
   const { id } = useParams();
 
   const cancelButtonRef = useRef(null);
 
   useEffect(() => {
     async function loadActors() {
-      const peopleSerie = await api.get(`/3/tv/${id}/credits?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
+      const peopleSerie = await api.get(`/3/tv/${id}/credits?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=${language}`);
 
       setActors(peopleSerie.data);
     }
 
     loadActors();
-  }, [id]);
+  }, [id, language]);
 
   return (
     <>
       <button className="ml-5 mt-5 pl-5 pr-5 bg-green-700 text-white mb-5" onClick={() => setOpen(true)}>
-       See Cast
+        {i18n.t('seeCast')}
       </button>
 
       <Transition.Root show={open} as={Fragment}>
@@ -44,7 +47,7 @@ export default function SerieActors() {
                     <div className="flex justify-between">
                       <div>
                         <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                          Cast
+                           {i18n.t('seeCast')}
                         </Dialog.Title>
                       </div>
                       <div>

@@ -3,27 +3,30 @@ import { Link } from 'react-router-dom';
 import { Dialog, Transition } from '@headlessui/react';
 import { useParams } from 'react-router-dom';
 import api from '../../../../services/api';
+import { i18n } from '../../../../translate/i18n';
 
+const I18N_STORAGE_KEY = 'i18nextLng';
 export default function Similar() {
   const [open, setOpen] = useState(false);
   const [similarMovies, setSimiliarMovies] = useState([]);
+  const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
   const { id } = useParams();
   const cancelButtonRef = useRef(null);
 
   useEffect(() => {
     async function loadFilme() {
-      const similiarMovies = await api.get(`/3/movie/${id}/similar?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
+      const similiarMovies = await api.get(`/3/movie/${id}/similar?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=${language}`);
 
       setSimiliarMovies(similiarMovies.data);
     }
 
     loadFilme();
-  }, [id]);
+  }, [id, language]);
   
   return (
     <>
       <button className="ml-5 mt-5 pl-5 pr-5 bg-red-900 text-white" onClick={() => setOpen(true)} >
-        Similar Movies
+        {i18n.t('similar')}
       </button>
 
       <Transition.Root show={open} as={Fragment}>
@@ -43,7 +46,7 @@ export default function Similar() {
                     <div className="flex justify-between">
                       <div>
                         <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                           Similar Movies
+                          {i18n.t('similarMovies')}
                         </Dialog.Title>
                       </div>
                       <div>
