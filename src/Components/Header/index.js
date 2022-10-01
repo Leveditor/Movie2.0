@@ -55,7 +55,7 @@ export default function Header() {
                 </div>
               </div>
     
-              { language === 'en-US' ? <img src={usa} /> : <img src={bra} /> }
+              { language === 'en-US' ? <img src={usa} alt="eua"/> : <img src={bra} alt="brasil"/> }
               <select onChange={handleSelectChange} value={language} className='bg-gray-800 text-white'>
                 <option value='pt-BR'>Português</option>
                 <option value='en-US'>English</option>
