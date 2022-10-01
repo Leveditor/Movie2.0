@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import { i18n } from '../../../translate/i18n';
 
 const navigation = [
-    {id:1, name: 'Most popular', href:'/top-movie-page'},
-    {id:2, name: 'The most voted', href:'/top-rated-page'},
-    {id:3, name: 'Upcoming Premieres', href:'/up-coming-page'},
+    {id:1, name: `${i18n.t('movies.popular')}`, href:'/top-movie-page'},
+    {id:2, name: `${i18n.t('movies.mostVoted')}`, href:'/top-rated-page'},
+    {id:3, name: `${i18n.t('movies.upComing')}`, href:'/up-coming-page'},
 ];
 
 export default function MenuMovie() {

@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import { i18n } from '../../../translate/i18n';
 
 const navigationSerie = [
-    {id: 1, name: 'Popular series', href:'/top-serie-page'},
-    {id: 2, name: 'Top Rated Series', href:'/top-rated-serie-page'},
+    {id: 1, name: `${i18n.t('series.popular')}`, href:'/top-serie-page'},
+    {id: 2, name: `${i18n.t('series.topRated')}`, href:'/top-rated-serie-page'},
 ];
 
 export default function MenuSerie() {
