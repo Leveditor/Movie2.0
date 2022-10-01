@@ -6,12 +6,6 @@ import settings from '../../SliderButton';
 import { i18n } from '../../../translate/i18n';
 
 const I18N_STORAGE_KEY = 'i18nextLng';
-const handleSelectChange = event => {
-  localStorage.setItem(I18N_STORAGE_KEY, event.target.value);
-  
-  window.location.reload();
-}
-
 
 export default function TopMovieHome() {
   const [movies, SetMovies] = useState([]);
@@ -29,14 +23,13 @@ export default function TopMovieHome() {
     list();
   }, []);
 
-
   return (
     <>
       <div className="mt-12 p-8">
         <div className="flex justify-between flex-wrap">
-          <h1 className="text-white text-2xl pb-1 pl-1 border-l-4 border-sky-700">Most Popular</h1>
+          <h1 className="text-white text-2xl pb-1 pl-1 border-l-4 border-sky-700">{i18n.t('movies.popular')}</h1>
           <Link to='top-movie-page'>
-            <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
+            <small className="pr-4 pl-4 bg-sky-700 text-white">{i18n.t('seeAll')}</small>
           </Link>
         </div>
         

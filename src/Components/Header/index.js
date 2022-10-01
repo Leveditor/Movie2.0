@@ -5,8 +5,8 @@ import MenuMovie from './DropDownMovie';
 import MenuSerie from './DropDownSerie';
 import { i18n } from '../../translate/i18n';
 import React, { useState } from 'react';
-import usa from './eua.png'
-import bra from './brasil.png'
+import usa from './eua.png';
+import bra from './brasil.png';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -19,13 +19,9 @@ const handleSelectChange = event => {
   window.location.reload();
 }
 
-
 export default function Header() {
-
   const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
 
-  
- 
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -57,7 +53,6 @@ export default function Header() {
                       
                   </div>
                 </div>
-                
               </div>
     
               { language === 'en-US' ? <img src={usa} /> : <img src={bra} /> }
