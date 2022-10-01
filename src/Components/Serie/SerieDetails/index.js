@@ -19,7 +19,7 @@ export default function SerieDetails() {
     }
 
     loadFilme();
-  }, [id]);
+  }, [id, language]);
 
   const styleTrailer = {
     backgroundImage: `url(https://image.tmdb.org/t/p/original/${serie.backdrop_path})`,

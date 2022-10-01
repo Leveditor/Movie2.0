@@ -26,7 +26,7 @@ export default function TopRatedSerie() {
     }
 
     list();
-  }, []);
+  }, [language]);
 
   return (
     <>

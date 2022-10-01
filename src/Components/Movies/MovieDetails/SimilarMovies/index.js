@@ -21,7 +21,7 @@ export default function Similar() {
     }
 
     loadFilme();
-  }, [id]);
+  }, [id, language]);
   
   return (
     <>

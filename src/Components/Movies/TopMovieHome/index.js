@@ -21,7 +21,7 @@ export default function TopMovieHome() {
     }
 
     list();
-  }, []);
+  }, [language]);
 
   return (
     <>

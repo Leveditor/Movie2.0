@@ -21,7 +21,7 @@ export default function TopRatedPage({ handleNext, handleBack }) {
     }
 
     list();
-  }, [page]);
+  }, [page, language]);
 
   return (
     <>

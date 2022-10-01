@@ -28,7 +28,7 @@ export default function TopRated() {
     }
 
     list();
-  }, []);
+  }, [language]);
 
   return (
     <>

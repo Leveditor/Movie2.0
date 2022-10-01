@@ -20,7 +20,7 @@ export default function MovieTopPage({ handleNext, handleBack }) {
       }
 
       list();
-    }, [page]);
+    }, [page, language]);
 
   return (
     <>

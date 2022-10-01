@@ -20,7 +20,7 @@ export default function PopularSerie({ handleNext, handleBack }) {
     }
 
     list();
-  }, [page]);
+  }, [page,language]);
 
   return (
     <>

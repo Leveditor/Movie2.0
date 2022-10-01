@@ -21,7 +21,7 @@ export default function SimilarSerie() {
     }
 
     loadSimilarSerie();
-  }, [id]);
+  }, [id, language]);
   
   return (
     <>

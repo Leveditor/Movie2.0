@@ -16,7 +16,7 @@ export default function Trailer() {
       }
 
       loadFilme();
-    }, [id]);
+    }, [id, language]);
 
   return(
       <>

@@ -20,7 +20,7 @@ export default function UpcomingPage({ handleNext, handleBack }) {
     }
 
     list();
-  }, [page]);
+  }, [page, language]);
 
   return (
     <>

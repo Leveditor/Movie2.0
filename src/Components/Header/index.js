@@ -67,7 +67,7 @@ export default function Header() {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
             <Link to='/' className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white',
-                   'px-3 py-2 rounded-md text-lg font-medium')}>{i18n.t('titles.home')}</Link>
+                   'px-3 py-2 rounded-md text-lg font-medium')}>{i18n.t('header.home')}</Link>
               <MenuMovie />
               <MenuSerie />
             </div>

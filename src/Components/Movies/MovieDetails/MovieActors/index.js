@@ -21,7 +21,7 @@ export default function MovieActors() {
       }
 
       loadFilme();
-    }, [id]);
+    }, [id, language]);
   
   return (
     <>

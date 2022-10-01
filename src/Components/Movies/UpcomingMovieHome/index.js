@@ -26,7 +26,7 @@ export default function Upcoming() {
     }
 
     list();
-  }, []);
+  }, [language]);
 
   return (
     <>

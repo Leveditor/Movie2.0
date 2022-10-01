@@ -21,7 +21,7 @@ export default function SerieActors() {
     }
 
     loadActors();
-  }, [id]);
+  }, [id, language]);
 
   return (
     <>

@@ -20,7 +20,7 @@ export default function Serie() {
     }
 
     list();
-  }, []);
+  }, [language]);
 
   return (
     <>
