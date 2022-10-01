@@ -18,7 +18,9 @@ const messages = {
                 topRated: 'Séries mais votadas',
             },
 
-            seeAll: 'VER TODOS'
+            seeAll: 'VER TODOS',
+            seeCast: 'Atores',
+            similar: 'Titulos semelhantes',
         }
     }
 }

@@ -18,7 +18,9 @@ const messages = {
                 topRated: 'Top Rated Series',
             },
 
-            seeAll: 'SEE ALL'
+            seeAll: 'SEE ALL',
+            seeCast: 'Cast',
+            similar: 'Similar titles',
         }
     }
 }
