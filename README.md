@@ -12,7 +12,7 @@ Photo
 
 ![Foto do projeto](projectPhoto.png)
 
-Final result: https://dulcet-sprite-89eea8.netlify.app/
+Final result: https://moviesprojectreact.netlify.app/
 
 ## Project's goal
 
