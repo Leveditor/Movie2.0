@@ -10,7 +10,7 @@ This project consists of consuming an API and displaying the movie catalog
 
 Photo
 
-![Foto do projeto](projectPhoto.png)
+![Foto do projeto](projectPhotoNew.png)
 
 Final result: https://moviesprojectreact.netlify.app/
 
