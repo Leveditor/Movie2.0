@@ -5,21 +5,19 @@ import MovieActors from './MovieActors';
 import Similar from './SimilarMovies';
 import Trailer from './TrailerMovie';
 
-const I18N_STORAGE_KEY = 'i18nextLng';
 export default function MovieDetails() {
   const { id } = useParams();
   const [movie, setSerie] = useState({});
-  const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
 
       useEffect(() => {
         async function loadSerie () {
-          const serie = await api.get(`/3/movie/${id}?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=${language}`);
+          const serie = await api.get(`/3/movie/${id}?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
 
           setSerie(serie.data);
         }
 
         loadSerie();
-      }, [id, language]);
+      }, [id]);
 
   const styleTrailer = {
     backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,

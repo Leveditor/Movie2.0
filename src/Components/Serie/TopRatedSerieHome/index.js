@@ -1,23 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import api from '../../../services/api';
+import React, { useEffect, useState } from "react";
+import api from "../../../services/api";
 import SliderButton from 'react-slick';
 import settings from '../../SliderButton';
-import { Link } from 'react-router-dom';
-import { i18n } from '../../../translate/i18n';
+import { Link } from "react-router-dom";
 
-const I18N_STORAGE_KEY = 'i18nextLng';
 export default function TopRatedSerie() {
   const [firstPage, SetFirstPage] = useState([]);
   const [secondPage, SetSecondPage] = useState([]);
-  const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
 
   useEffect(() => {
     async function list() {
-      const responseFirstPage = await api.get(`/3/tv/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=${language}&page=1`,
+      const responseFirstPage = await api.get("/3/tv/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=1",
         {}
       );
 
-      const responseSecondPage = await api.get(`/3/tv/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=${language}&page=2`,
+      const responseSecondPage = await api.get("/3/tv/top_rated?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=2",
         {}
       );
 
@@ -26,15 +23,17 @@ export default function TopRatedSerie() {
     }
 
     list();
-  }, [language]);
+  }, []);
 
   return (
     <>
+   
+        
       <div className="mt-8 p-8 pt-0">
         <div className="flex justify-between flex-wrap">
-          <h1 className="text-white text-2xl pb-1 pl-1 border-l-4 border-sky-700">{i18n.t('series.topRated')}</h1>
+          <h1 className="text-white text-2xl pb-1 pl-1 border-l-4 border-sky-700">Top Rated Series</h1>
           <Link to="top-rated-serie-page">
-            <small className="pr-4 pl-4 bg-sky-700 text-white">{i18n.t('seeAll')}</small>
+            <small className="pr-4 pl-4 bg-sky-700 text-white">SEE ALL</small>
           </Link>
         </div>
 

@@ -2,17 +2,14 @@ import React, { useEffect, useState } from 'react';
 import ButtonPage from '../../../NextPageButton';
 import { Link } from 'react-router-dom';
 import api from '../../../../services/api';
-import { i18n } from '../../../../translate/i18n';
 
-const I18N_STORAGE_KEY = 'i18nextLng';
 export default function MovieTopPage({ handleNext, handleBack }) {
     const [allmovies, SetAllMovies] = useState([]);
     const [page, setPage] = useState(1);
-    const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
 
     useEffect(() => {
       async function list() {
-        const allMovie = await api.get(`/3/movie/popular?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=${language}&page=${page}`,
+        const allMovie = await api.get(`/3/movie/popular?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US&page=${page}`,
           {}
         );
 
@@ -20,13 +17,13 @@ export default function MovieTopPage({ handleNext, handleBack }) {
       }
 
       list();
-    }, [page, language]);
+    }, [page]);
 
   return (
     <>
       <div className="mt-12 p-8">
         <div>
-          <h1 className="text-2xl text-white pb-1 pl-1">{i18n.t('movies.popular')}</h1>
+          <h1 className="text-2xl text-white pb-1 pl-1">Most Popular</h1>
       </div>
       <div className="grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2">
         {allmovies.map((movie) => {
