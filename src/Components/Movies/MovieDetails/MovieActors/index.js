@@ -2,31 +2,28 @@ import { Fragment, useRef, useState, useEffect } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import api from '../../../../services/api';
 import { useParams } from 'react-router-dom';
-import { i18n } from '../../../../translate/i18n';
 
-const I18N_STORAGE_KEY = 'i18nextLng';
 export default function MovieActors() {
   const [open, setOpen] = useState(false);
   const [actors, setActors] = useState({});
-  const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
   const { id } = useParams();
 
   const cancelButtonRef = useRef(null);
 
     useEffect(() => {
       async function loadFilme() {
-        const peopleMovie = await api.get(`/3/movie/${id}/credits?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=${language}`);
+        const peopleMovie = await api.get(`/3/movie/${id}/credits?api_key=5419518a2cef35d1e6fa80c720b89ae7&language=en-US`);
 
         setActors(peopleMovie.data);
       }
 
       loadFilme();
-    }, [id, language]);
+    }, [id]);
   
   return (
     <>
       <button className="ml-5 mt-5 pl-5 pr-5 bg-green-700 text-white mb-5" onClick={() => setOpen(true)}>
-        {i18n.t('seeCast')}
+        See Cast
       </button>
 
       <Transition.Root show={open} as={Fragment}>
@@ -46,7 +43,7 @@ export default function MovieActors() {
                     <div className="flex justify-between">
                       <div>
                         <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900" >
-                          {i18n.t('seeCast')}
+                          Cast
                         </Dialog.Title>
                       </div>
                       <div>
